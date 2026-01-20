@@ -28,7 +28,7 @@ services:
       - appwrite
 
   appwrite:
-    image: appwrite/appwrite:1.8.0
+    image: appwrite/appwrite:1.8.1
     <<: *x-logging
     restart: unless-stopped
     networks:
@@ -166,7 +166,7 @@ services:
       - _APP_ASSISTANT_OPENAI_API_KEY
   appwrite-console:
     <<: *x-logging
-    image: appwrite/console:7.4.7
+    image: appwrite/console:7.5.7
     restart: unless-stopped
     networks:
       - appwrite
@@ -186,7 +186,7 @@ services:
       - traefik.http.routers.appwrite_console_https.tls=true
 
   appwrite-realtime:
-    image: appwrite/appwrite:1.8.0
+    image: appwrite/appwrite:1.8.1
     entrypoint: realtime
     <<: *x-logging
     restart: unless-stopped
@@ -228,7 +228,7 @@ services:
       - _APP_LOGGING_CONFIG
 
   appwrite-worker-audits:
-    image: appwrite/appwrite:1.8.0
+    image: appwrite/appwrite:1.8.1
     entrypoint: worker-audits
     <<: *x-logging
     restart: unless-stopped
@@ -253,7 +253,7 @@ services:
       - _APP_LOGGING_CONFIG
 
   appwrite-worker-webhooks:
-    image: appwrite/appwrite:1.8.0
+    image: appwrite/appwrite:1.8.1
     entrypoint: worker-webhooks
     <<: *x-logging
     restart: unless-stopped
@@ -280,7 +280,7 @@ services:
       - _APP_LOGGING_CONFIG
 
   appwrite-worker-deletes:
-    image: appwrite/appwrite:1.8.0
+    image: appwrite/appwrite:1.8.1
     entrypoint: worker-deletes
     <<: *x-logging
     restart: unless-stopped
@@ -342,7 +342,7 @@ services:
       - _APP_EMAIL_CERTIFICATES
 
   appwrite-worker-databases:
-    image: appwrite/appwrite:1.8.0
+    image: appwrite/appwrite:1.8.1
     entrypoint: worker-databases
     <<: *x-logging
     restart: unless-stopped
@@ -367,7 +367,7 @@ services:
       - _APP_LOGGING_CONFIG
 
   appwrite-worker-builds:
-    image: appwrite/appwrite:1.8.0
+    image: appwrite/appwrite:1.8.1
     entrypoint: worker-builds
     <<: *x-logging
     restart: unless-stopped
@@ -434,7 +434,7 @@ services:
       - _APP_DOMAIN_SITES
 
   appwrite-worker-certificates:
-    image: appwrite/appwrite:1.8.0
+    image: appwrite/appwrite:1.8.1
     entrypoint: worker-certificates
     <<: *x-logging
     restart: unless-stopped
@@ -470,7 +470,7 @@ services:
       - _APP_LOGGING_CONFIG
 
   appwrite-worker-functions:
-    image: appwrite/appwrite:1.8.0
+    image: appwrite/appwrite:1.8.1
     entrypoint: worker-functions
     <<: *x-logging
     restart: unless-stopped
@@ -508,7 +508,7 @@ services:
       - _APP_LOGGING_CONFIG
 
   appwrite-worker-mails:
-    image: appwrite/appwrite:1.8.0
+    image: appwrite/appwrite:1.8.1
     entrypoint: worker-mails
     <<: *x-logging
     restart: unless-stopped
@@ -541,7 +541,7 @@ services:
       - _APP_OPTIONS_FORCE_HTTPS
 
   appwrite-worker-messaging:
-    image: appwrite/appwrite:1.8.0
+    image: appwrite/appwrite:1.8.1
     entrypoint: worker-messaging
     <<: *x-logging
     restart: unless-stopped
@@ -591,7 +591,7 @@ services:
       - _APP_STORAGE_WASABI_BUCKET
 
   appwrite-worker-migrations:
-    image: appwrite/appwrite:1.8.0
+    image: appwrite/appwrite:1.8.1
     entrypoint: worker-migrations
     <<: *x-logging
     restart: unless-stopped
@@ -626,7 +626,7 @@ services:
       - _APP_MIGRATIONS_FIREBASE_CLIENT_SECRET
 
   appwrite-task-maintenance:
-    image: appwrite/appwrite:1.8.0
+    image: appwrite/appwrite:1.8.1
     entrypoint: maintenance
     <<: *x-logging
     restart: unless-stopped
@@ -664,7 +664,7 @@ services:
       - _APP_MAINTENANCE_RETENTION_SCHEDULES
 
   appwrite-task-stats-resources:
-    image: appwrite/appwrite:1.8.0
+    image: appwrite/appwrite:1.8.1
     entrypoint: stats-resources
     <<: *x-logging
     restart: unless-stopped
@@ -692,7 +692,7 @@ services:
       - _APP_STATS_RESOURCES_INTERVAL
 
   appwrite-worker-stats-resources:
-    image: appwrite/appwrite:1.8.0
+    image: appwrite/appwrite:1.8.1
     entrypoint: worker-stats-resources
     <<: *x-logging
     restart: unless-stopped
@@ -719,7 +719,7 @@ services:
       - _APP_STATS_RESOURCES_INTERVAL
 
   appwrite-worker-stats-usage:
-    image: appwrite/appwrite:1.8.0
+    image: appwrite/appwrite:1.8.1
     entrypoint: worker-stats-usage
     <<: *x-logging
     restart: unless-stopped
@@ -746,7 +746,7 @@ services:
       - _APP_USAGE_AGGREGATION_INTERVAL
 
   appwrite-task-scheduler-functions:
-    image: appwrite/appwrite:1.8.0
+    image: appwrite/appwrite:1.8.1
     entrypoint: schedule-functions
     <<: *x-logging
     restart: unless-stopped
@@ -770,7 +770,7 @@ services:
       - _APP_DB_PASS
 
   appwrite-task-scheduler-executions:
-    image: appwrite/appwrite:1.8.0
+    image: appwrite/appwrite:1.8.1
     entrypoint: schedule-executions
     <<: *x-logging
     restart: unless-stopped
@@ -794,7 +794,7 @@ services:
       - _APP_DB_PASS
 
   appwrite-task-scheduler-messages:
-    image: appwrite/appwrite:1.8.0
+    image: appwrite/appwrite:1.8.1
     entrypoint: schedule-messages
     <<: *x-logging
     restart: unless-stopped
@@ -818,7 +818,7 @@ services:
       - _APP_DB_PASS
 
   appwrite-assistant:
-    image: appwrite/assistant:0.8.3
+    image: appwrite/assistant:0.8.4
     <<: *x-logging
     restart: unless-stopped
     networks:
@@ -827,7 +827,7 @@ services:
       - _APP_ASSISTANT_OPENAI_API_KEY
 
   appwrite-browser:
-    image: appwrite/browser:0.2.4
+    image: appwrite/browser:0.3.2
     <<: *x-logging
     restart: unless-stopped
     networks:
